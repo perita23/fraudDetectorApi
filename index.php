@@ -3,7 +3,8 @@ header("Content-Type: application/json");
 
 // Verificar el método de la solicitud
 $method = $_SERVER['REQUEST_METHOD'];
-
+$depositData[""];
+$withdrawal[""];
 if ($method == 'POST') {
     $movementType = $_POST["movementType"];
     $amount = $_POST["amount"];
