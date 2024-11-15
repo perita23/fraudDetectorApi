@@ -8,7 +8,7 @@
 
 * POST
 
-## Name of the keys for the apis
+## Name of the keys for the api
 
 * ```movementType``` ->  String = "DEPOSIT_TRANSACTION" / "WITHDRAWAL_TRANSACTION"
 * ```amount``` -> Float = >=0.0
