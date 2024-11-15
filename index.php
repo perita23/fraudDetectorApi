@@ -1,59 +1,103 @@
 <?php
 header("Content-Type: application/json");
 
-// Verificar el método de la solicitud
+
 $method = $_SERVER['REQUEST_METHOD'];
-$depositData[""];
-$withdrawal[""];
+
+$depositData = [
+    [
+        "movement" => "DEPOSIT_TRANSACTION",
+        "amount" => 5000,
+        "action" => true,
+        "risk" => 25,
+        "id" => "1"
+    ],
+    [
+        "movement" => "DEPOSIT_TRANSACTION",
+        "amount" => 10000,
+        "action" => true,
+        "risk" => 50,
+        "id" => "2"
+    ],
+    [
+        "movement" => "DEPOSIT_TRANSACTION",
+        "amount" => 20000,
+        "action" => false,
+        "risk" => 75,
+        "id" => "3"
+    ],
+    [
+        "movement" => "DEPOSIT_TRANSACTION",
+        "amount" => 50000,
+        "action" => false,
+        "risk" => 100,
+        "id" => "4"
+    ]
+];
+
+$withdrawal = [
+    [
+        "movement" => "WITHDRAW_TRANSACTION",
+        "amount" => 1000,
+        "action" => true,
+        "risk" => 25,
+        "id" => "5"
+    ],
+    [
+        "movement" => "WITHDRAW_TRANSACTION",
+        "amount" => 2500,
+        "action" => true,
+        "risk" => 50,
+        "id" => "6"
+    ],
+    [
+        "movement" => "WITHDRAW_TRANSACTION",
+        "amount" => 5000,
+        "action" => false,
+        "risk" => 75,
+        "id" => "7"
+    ],
+    [
+        "movement" => "WITHDRAW_TRANSACTION",
+        "amount" => 10000,
+        "action" => false,
+        "risk" => 100,
+        "id" => "8"
+    ]
+];
+
 if ($method == 'POST') {
     $movementType = $_POST["movementType"];
     $amount = $_POST["amount"];
+    switch ($movementType) {
+        case 'DEPOSIT_TRANSACTION':
+            foreach ($depositData as $key => $value) {
+                if ($amount <= $value["amount"]) {
+                    $response = [
+                        $value['action'],
+                        $value['risk']
+                    ];
+                }
+            }
+            break;
 
-    if ($movementType == "DEPOSIT_TRANSACTION") {
-        switch ($amount) {
-            case 0:
-                # code...
-                break;
-            case 0:
-                # code...
-                break;
-            case 0:
-                # code...
-                break;
-            case 0:
-                # code...
-                break;
-
-            default:
-                # code...
-                break;
-        }
-    } else if ($movementType == "WITHDRAWAL_TRANSACTION") {
-        switch ($amount) {
-            case 0:
-                # code...
-                break;
-            case 0:
-                # code...
-                break;
-            case 0:
-                # code...
-                break;
-            case 0:
-                # code...
-                break;
-
-            default:
-                # code...
-                break;
-        }
-        $response = ["error" => "Movimiento no especificado"];
+        case 'WITHDRAWAL_TRANSACTION':
+            foreach ($withdrawalData as $key => $value) {
+                if ($amount <= $value["amount"]) {
+                    $response = [
+                        $value['action'],
+                        $value['risk']
+                    ];
+                }
+            }
+            break;
+        default:
+            $response = ["error" => "Movimiento no especificado"];
+            break;
     }
-
 } else {
     http_response_code(405);
     $response = ["error" => "Método no permitido. Use POST."];
 }
-
 echo json_encode($response);
 ?>
