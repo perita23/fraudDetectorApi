@@ -76,8 +76,8 @@ if ($method == 'POST') {
             foreach ($depositData as $key => $value) {
                 if ($amount <= $value["amount"]) {
                     $response = [
-                        $value['action'],
-                        $value['risk']
+                        "action" => $value['action'],
+                        "risk" => $value['risk']
                     ];
                 }
             }
@@ -87,8 +87,8 @@ if ($method == 'POST') {
             foreach ($withdrawalData as $key => $value) {
                 if ($amount <= $value["amount"]) {
                     $response = [
-                        $value['action'],
-                        $value['risk']
+                        "action" => $value['action'],
+                        "risk" => $value['risk']
                     ];
                 }
             }
