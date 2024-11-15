@@ -10,8 +10,14 @@
 
 ## Name of the keys for the api
 
-* ```movementType``` ->  String = "DEPOSIT_TRANSACTION" / "WITHDRAWAL_TRANSACTION"
-* ```amount``` -> Float = >=0.0
+* ```movementType```
+  * ```PHP
+      movementType : string = "DEPOSIT_TRANSACTION" | "WITHDRAWAL_TRANSACTION"
+    ```
+* ```amount```
+    * ```PHP
+      amount : float = float >= 0.0 
+      ```
 
 ## Api key?
 
