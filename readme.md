@@ -10,8 +10,8 @@
 
 ## Name of the keys for the apis
 
-* ```movementType```
-* ```amount```
+* ```movementType``` ->  String 
+* ```amount``` -> Float
 
 ## Api key?
 
