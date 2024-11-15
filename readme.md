@@ -1,8 +1,17 @@
 # Usage of fraudDetector Api
+
+## Name of the endpoint
+
+* https://frauddetectorapi.onrender.com
+
+## Method
+
+* POST
+
 ## Name of the keys for the apis
 
-* movementType
-* amount
+* ```movementType```
+* ```amount```
 
 ## Api key?
 
