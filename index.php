@@ -71,6 +71,8 @@ if ($method == 'POST') {
     $amount = $_POST["amount"];
     switch ($movementType) {
         case 'DEPOSIT_TRANSACTION':
+            if ($amount > 50000)
+                return json_encode(["error" => "max amount detected for deposit"]);
             foreach ($depositData as $key => $value) {
                 if ($amount <= $value["amount"]) {
                     $response = [

@@ -10,8 +10,8 @@
 
 ## Name of the keys for the apis
 
-* ```movementType``` ->  String 
-* ```amount``` -> Float
+* ```movementType``` ->  String = "DEPOSIT_TRANSACTION" / "WITHDRAWAL_TRANSACTION"
+* ```amount``` -> Float = >=0.0
 
 ## Api key?
 
