@@ -35,7 +35,7 @@ $depositData = [
     ]
 ];
 
-$withdrawal = [
+$withdrawalData = [
     [
         "movement" => "WITHDRAW_TRANSACTION",
         "amount" => 1000,
