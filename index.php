@@ -84,7 +84,7 @@ if ($method == 'POST') {
             }
             break;
 
-        case 'WITHDRAWAL_TRANSACTION':
+        case 'WITHDRAW_TRANSACTION':
             foreach ($withdrawalData as $key => $value) {
                 if ($amount <= $value["amount"]) {
                     $response = [
